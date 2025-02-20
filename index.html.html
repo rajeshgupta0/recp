@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>R.E.C Pratapgarh - Engineering College </title>
+   
+   <style>
+       /* General Reset */
+       body, ul, h1, h2, p, input, button, textarea {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       header {
+            background-color: #004c99;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+       body {
+           font-family: Arial, sans-serif; 
+           line-height: 1.9;
+           background-color: hsl(251, 81%, 40%);
+       }
+
+
+       /* Navigation */
+       .navbar {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 10px 20px;
+           background-color: #003366;
+           color: white;
+           position: sticky;
+           top: 0;
+           z-index: 1000;
+       }
+       .navbar ul {
+           list-style: none;
+           display: flex;
+           position: relative;
+           
+       }
+       .navbar li {
+           margin: 0 5px;
+       }
+       .navbar a {
+           color: white;
+           text-decoration: none;
+           padding: 5px 10px;
+           font-weight: bold;
+       }
+       .navbar a:hover {
+           background-color: #0055a5;
+           border-radius: 5px;
+       }
+
+
+
+       /* Dropdown */
+       .dropdown {
+           position: relative;
+           display: inline-block;
+       }
+       .dropdown-content {
+           display: none;
+           position: absolute;
+           background-color: #bfd2c3;
+           min-width: 260px;
+           z-index: 1;
+           top: 100%;
+           left: 0;
+           border-radius: 23px;
+       }
+       .dropdown-content a {
+           color: rgb(17, 1, 1);
+           padding: 12px 16px;
+           text-decoration: none;
+           display: block;
+       }
+       .dropdown-content a:hover {
+           background-color: #0055a5;
+       }
+       .dropdown:hover .dropdown-content {
+           display: block;
+       }
+
+
+
+
+       /* Hero Section  fffgv dvfv verfvjeojv vdff dfvg dffv efkf ffk dd*/
+       .hero {
+           position: relative;
+           height: 65vh;
+           background-color: #f4f4f9;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       }
+       .hero img {
+           width: 100%;
+           height: 65vh;
+           border-radius: 10px;
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+       }
+       .hero-buttons {
+           position: absolute;
+           top: 50%;
+           width: 100%;
+           display: flex;
+           justify-content: space-between;
+           padding: 0 20px;
+           transform: translateY(-50%);
+       }
+       .hero-buttons button {
+           padding: 10px 20px;
+           background-color: #0055a5;
+           color: white;
+           border: none;
+           border-radius: 5px;
+           font-size: 1rem;
+           cursor: pointer;
+       }
+       .hero-buttons button:hover {
+           background-color: #003366;
+       }
+
+       /* Social Media Links */
+       .social-links {
+           position: absolute;
+           top: 10%;
+           left: 5%;
+           display: flex;
+           flex-direction: column;
+           gap: 15px;
+       }
+       .social-links a img {
+           width: 50px;
+           height: 50px;
+           border-radius: 5px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+       }
+
+       /* Bulletin Board 
+       .bulletin-board {
+           background-color: #e2e3e5;
+           color: #495057;
+           padding: 40px;
+           margin: 10px auto;
+           border: 2px solid #ddd;
+           border-radius: 5px;
+           max-width: 800px;
+           text-align: center;
+           font-weight: bold;
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       }
+       .bulletin-board h2 {
+           margin-bottom: 10px;
+           font-size: 2rem;
+       }
+       .bulletin-board ul {
+           list-style: none;
+           padding: 0;
+       }
+       .bulletin-board li {
+           font-size: 1.2rem;
+           margin: 50px 0;
+       } */
+   /* General Styles */
+     /* General Styles */
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .board-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Running News Ticker */
+        .news-ticker {
+            width: 100%;
+            overflow: hidden;
+            background: #ff5722;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            white-space: nowrap;
+            padding: 10px 0;
+        }
+
+        .news-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollNews 10s linear infinite; /* Speed can be adjusted */
+        }
+
+        @keyframes scrollNews {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+       /* Sections */
+       .section {
+           padding: 50px 20px;
+           text-align: center;
+           background-color: white;
+           margin: 0px 0;
+           border-radius: 5px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       }
+       .section h2 {
+           margin-bottom: 20px;
+           font-size: 2.5rem;
+           color: #003366;
+       }
+
+
+         /* About and Contact Sections */
+         section {
+            padding: 2rem 10%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 1rem;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        form button {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background-color: #002366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+       /* Footer */
+       footer {
+           text-align: center;
+           padding: 10px 20px;
+           background-color: #003366;
+           color: white;
+       }
+   </style>
+</head>
+<body> 
+    <style>
+
+
+      /* Mentor Section */
+     
+		/* Centering Section Titles */
+#mentors h2, #cultural-updates h2 {
+    text-align: center; /* Center the text */
+    font-size: 1.8rem; /* Slightly larger font */
+    color: #003366; /* Consistent theme color */
+    margin-bottom: 20px; /* Spacing below title */
+    font-weight: bold;
+}
+
+		/* Container for the two sections */
+.mentor-cultural-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #f4f4f4; /* Light gray background */
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Box effect */
+    box-shadow: 0 2px 4px rgba(17, 17, 17, 0.1);
+}
+
+/* Each section gets equal space */
+#mentors, #cultural-updates {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgb(225, 255, 250);
+}
+
+/* Cultural Updates Section - Styling for Box Effect */
+
+
+#cultural-updates .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 15px; /* Space between cards */
+}
+
+#cultural-updates .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings inside cultural updates */
+#cultural-updates h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+/* Text inside cultural updates */
+#cultural-updates p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Link styling */
+#cultural-updates a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#cultural-updates a:hover {
+    text-decoration: underline;
+}
+
+/* Mentor images in horizontal form */
+.mentors-container {
+    display: flex;
+    flex-wrap: nowrap; /* Keep them in a single row */
+    gap: 15px;
+    overflow-x: auto; /* Scrollable if too many mentors */
+    padding-top: 10px;
+}
+ 
+
+/* Individual mentor card styling */
+#mentors .card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+    min-width: 220px;
+}
+
+#mentors .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mentor images - fixed size */
+#mentors .card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Mentor text content */
+.mentor-info {
+    text-align: left;
+}
+
+/* logo with text*/
+       body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  height: 40vh; /* Adjust the height as needed */
+  align-items: center;
+}
+
+.image-section-left,
+.image-section-right {
+  flex: 1; /* Equal space for images */
+}
+
+.image-section-left img,
+.image-section-right img {
+  width: 100%; /* Ensures the image fills its section */
+  height: 100%; /* Ensures the image covers the height */
+  object-fit: cover; /* Maintains aspect ratio */
+}
+
+.text-section {
+  flex: 2; /* Takes up more space than the images */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #f9f3f3; /* Optional for better visual separation */
+}
+
+.text-section h1 {
+  margin: 0 0 10px;
+}
+
+.text-section p {
+  margin: 10px 0;
+}
+
+
+
+       /* Cultural Updates Section */
+       #cultural-updates {
+           background-color: #def9f1;
+       }
+     </style>
+     
+     
+   <!-- Navigation -->
+   <header>
+       <nav class="navbar">
+           <div class="logo">R.E.C Pratapgarh</div>
+           <ul> 
+               <li><a href="https://www.knit.ac.in/en/article/rec-pratapgarh" onclick="showSection('home')">Home</a></li>
+             
+               <li class="dropdown">
+                   <a href="#">Departments</a>
+                   <div class="dropdown-content">
+                       <a href="compter.html" onclick="showSection('btech-cse')">B.Tech in Computer Science Engineering</a>
+                       <a href="#btech-ee" onclick="showSection('btech-ee')">B.Tech in Electrical Engineering</a>
+                       <a href="#btech-me" onclick="showSection('btech-me')">B.Tech in Mechanical Engineering</a>
+                       <a href="#btech-ce" onclick="showSection('btech-ce')">B.Tech in Civil Engineering</a>
+                   </div>
+               </li>
+
+
+               <li><a href="https://sites.google.com/site/yogendranarainsingh/">Directorate</a></li>
+
+
+               
+               <li class="dropdown">
+                <a href="#">Deans</a>
+                <div class="dropdown-content">
+                    <a href="#btech-cse" onclick="showSection('btech-cse')">Dean,Academic Affairs </a>
+                    <a href="#btech-ee" onclick="showSection('btech-ee')">Dean,Faculty Affairs</a>
+                    <a href="#btech-me" onclick="showSection('btech-me')">Dean,Students Affairs</a>
+                    <a href="#btech-ce" onclick="showSection('btech-ce')">Dean,Research& development</a>
+                    <a href="#btech-me" onclick="showSection('btech-me')">Dean of Administration</a>
+                    <a href="#btech-ce" onclick="showSection('btech-ce')">Dean of National Relations</a>
+                    <a href="#btech-me" onclick="showSection('btech-me')">Dean,Infrastructure & Planning</a>
+                    <a href="#btech-ce" onclick="showSection('btech-ce')">Dean,Digital Infrastructure & Automation</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Placements</a>
+                <div class="dropdown-content">
+                    <a href="#btech-cse" onclick="showSection('btech-cse')">Placements</a>
+                    <a href="h.html" onclick="showSection('btech-ee')">Downloads</a>
+                  
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Campus Services</a>
+                <div class="dropdown-content">
+                    <a href="#btech-cse" onclick="showSection('btech-cse')">Amenities</a>
+                    <a href="#btech-ee" onclick="showSection('btech-ee')">Services</a>
+                    <a href="#highlight-board" onclick="showSection('btech-me')">Bulletin Board</a>
+                    <a href="hostel.html" onclick="showSection('btech-ce')">Hostels</a>
+                    <a href="#btech-me" onclick="showSection('btech-me')">Self Help</a>
+                   
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">For Students</a>
+                <div class="dropdown-content">
+                    <a href="#btech-cse" onclick="showSection('btech-cse')">Prospactive <ol><LI> <a href="#rec">Why Rec Pratapgarh</a></LI>
+                        <li><a href="addmison.html">Addmison  eligibilty</a></li>
+                    </ol></a>
+                    <a href="#btech-ee" onclick="showSection('btech-ee')">Exiciting Student <ol><li><a href="https://erp.aktu.ac.in/Login.aspx">A.K.T.U Erp login</a></li>
+                       <LI> <a href="https://aktu.samarth.edu.in/index.php/site/login">Samarth PORTAL login</a></LI>
+                       <LI> <a href=" https://scholarship.up.gov.in/">U.P Scholarship login</a></LI>
+                    </ol></a>
+                   
+                </div>
+            </li>
+            
+            
+            
+            <li class="dropdown">
+                <a href="#">Quick Links</a>
+                <div class="dropdown-content">
+                    <a href="#btech-cse" onclick="showSection('btech-cse')">General</a>
+                    <a href="h.html" onclick="showSection('btech-ee')">Faculty</a>
+                    <a href="campus-life" onclick="showSection('campus-life')">Students</a>
+                    <a href="#btech-ce" onclick="showSection('btech-ce')">Research</a>
+                    <a href="#btech-me" onclick="showSection('btech-me')">Alumni</a>
+                    <a href="#btech-ce" onclick="showSection('btech-ce')">Staff</a>
+                    <a href="#btech-me" onclick="showSection('btech-me')">Media</a>
+                </div>
+            </li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="#contact">Contact</a></li>
+
+           </ul>
+       </nav>
+   </header>
+
+  <!-- Hero Section with Images -->
+<div class="container">
+    <div class="image-section-left">
+      <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg" alt="Left Image">
+    </div>
+    <div class="text-section">
+      <h1><strong>राजकीय इंजीनियरिंग कॉलेज, प्रतापगढ़</strong></h1>
+      <h1>Rajkiya Engineering College Pratapgarh</h1>
+      <p>Top Government Engineering College in UP, AICTE approved & Affiliated to Dr. APJ Abdul Kalam University Lucknow.</p>
+    </div>
+    <div class="image-section-right">
+      <img src="https://itcollege.ac.in/itcps/wp-content/uploads/2017/12/Aktu_logo.png" alt="Right Image">
+    </div>
+  </div>
+  
+
+ <section id="home" class="hero">
+    
+    
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+        </a>
+        <a href="https://www.youtube.com" target="_blank" title="YouTube">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">
+        </a>
+        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook Logo">
+        </a>
+    </div>
+    
+    <img id="carousel-image" src="https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/iit-varanasi.jpg" alt="Image 1">
+  
+
+    <div class="hero-buttons">
+        <button onclick="prevImage()">Previous</button>
+        <button onclick="nextImage()">Next</button>
+    </div>
+    
+</section>
+
+ 
+    <!-- About Section 
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <li><a href="about.html">About</a></li>
+        <p>Rajkiya Engineering College Pratapgarh is a premier institution committed to academic excellence and cutting-edge research in engineering and technology.</p>
+    </section> -->
+ 
+   
+ 
+      <!-- About Section -->
+       <!-- Image Gallery -->
+        <!-- Highlight Board -->
+          <!-- Contact Section -->
+    <!-- Bulletin Board 
+    <section class="bulletin-board">
+        <h2>Bulletin Board</h2>
+        <ul>
+            <li><strong>Important Notice:</strong> The campus will be closed on December 31, 2024, for New Year Celebrations.</li>
+            <li><strong>Examination Alert:</strong> Mid-term exams are scheduled for January 15, 2024.</li>
+            <li><strong>Library Timings:</strong> The library will be open from 8:00 AM to 8:00 PM during the winter break.</li>
+        </ul>
+    </section> -->
+ 
+     <div class="board-container">
+
+        <!-- News Ticker -->
+        <div class="news-ticker">
+            <div class="news-content" id="news-content">
+                🔥 Latest News: "Tech Conference 2025 Announced!" • "Stock Market Hits New High!" • "New AI Breakthrough in Robotics!" • "Weather Update: Sunny Weekend Ahead!" • "Sports: National Team Wins Championship!" 
+            </div>
+        </div>
+    </div>
+
+    
+ 
+    	<!-- Mentor and Cultural Updates Section -->
+<div class="mentor-cultural-container">
+    <div id="cultural-updates">
+        <h2>Cultural Updates</h2>
+        <div class="card">
+            <h3>Annual Cultural Fest</h3>
+            <p>Join us for an exciting cultural fest showcasing dance, music, and performances.</p>
+        </div>
+        <div class="card">
+            <h3>Workshops & Seminars</h3>
+            <p>Attend workshops on art, drama, and other cultural activities.</p>
+        </div>
+        <div class="card">
+            <h3>Final Datesheet of Examination</h3>
+            <p>For all branches of 1st, 2nd, 3rd-year students</p>
+            <a href="#">Click here</a>
+        </div>
+    </div>
+
+    <div id="mentors">
+        <h2>Our Mentors</h2>
+        <div class="card">
+            <img src="https://images.hindi.news18.com/ibnkhabar/uploads/2021/11/Yogi-Adityanath-1.jpg" alt="Faculty Member">
+            <h3>Yogi Adityanath</h3>
+             <p>(Chief Minister of Uttar Pradesh)</p>
+        </div>
+        <div class="card">
+            <img src="https://wikibio.in/wp-content/uploads/2021/11/Anandiben-Patel.jpg" alt="Faculty Member">
+            <h3>Anandiben Patel</h3>
+            <p>(Governor of Uttar Pradesh)</p>
+        </div>
+        <div class="card">
+            <img src="https://aktu.ac.in/images/img/JP_Main.jpeg" alt="Faculty Member">
+            <h3>Prof. J. P. Pandey</h3>
+            <p>Vice Chancellor of A.K.T.U</p>
+        </div>
+        <div class="card">
+            <img src="https://fms.aktu.ac.in/Resources/aktu/rajeev%20kumar.png" alt="Faculty Member">
+            <h3>Dr. Rajeev Kumar</h3>
+            <p>Pro Vice-Chancellor</p>
+        </div>
+        <div class="card">
+            <img src="https://www.ietlucknow.ac.in/sites/default/files/styles/150x150/public/propic/YNS.jpeg?itok=1_eFWkCK" alt="Faculty Member">
+            <h3>Dr. Yogendra Narain Singh</h3>
+            <p>Director of R.E.C Pratapgarh</p>
+        </div>
+    </div>
+</div>
+   <section class="section">
+    <h2>Our Campus</h2>
+    <div class="gallery">
+        <img src="" alt="">
+        <img src="https://media.getmyuni.com/azure/college-image/big/sri-sai-college-of-engineering-and-technology-sscet-amritsar.jpg" alt="Campus View 1">
+        <img src="https://cimages1.touristlink.com/data/cache/I/I/T/K/L/I/B/R/iitk-library_400_300.jpg" alt="Campus View 2">
+        <img src="https://th.bing.com/th/id/R.29c797eeb3b69c5c88ae525d85955e9d?rik=6kCU55ryq1gWdw&riu=http%3a%2f%2fparkcemeteryplots.com%2fphotos%2f2-Crypts-in-Outdoor-Columbarium-Vault-White-Haven-Memorial-Park-Pittsford-NY-03-xyh.jpg&ehk=%2bH4qoNdxEscSgX84P8rHE%2bCF8JCsp3hQ9yVB5u3hN4I%3d&risl=&pid=ImgRaw&r=0" alt="Campus View 3">
+        <img src="https://cache.careers360.mobi/media/article_images/2023/4/17/iit-kanpur-official-website-featured-image.jpg" alt="Campus View 4">
+    </div>
+</section>
+   
+ 
+ 
+      <section id="about" class="section">
+         <h2>About Us</h2>
+         <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>About Rajkiya engineering College Pratapgarh</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #f9f9f9;
+             color: #333;
+         }
+         .container {
+             max-width: 1200px;
+             margin: 0 auto;
+             padding: 20px;
+         }
+         header {
+             background-color: #00468b;
+             color: white;
+             padding: 0px 0;
+             text-align: center;
+         }
+         header h1 {
+             margin: 0;
+         }
+         .about-section {
+             background-color: #fff;
+             border-radius: 8px;
+             box-shadow: 10 4px 8px rgba(0, 0, 0, 0.9);
+             padding: 0px;
+             margin-top: 0px;
+         }
+         .about-section h2 {
+             color: #00468b;
+         }
+         .about-section p {
+             line-height: 1.9;
+         }
+         footer {
+             background-color: #00468b;
+             color: white;
+             text-align: center;
+             padding: 10px 0;
+             margin-top: 20px;
+         } 
+         
+     </style>
+ </head>
+ <body>
+ 
+ <div class="container">
+     <section class="about-section">
+         <p>Established in 2023, the Rajkiya engineering College Pratapgarh (R.E.C PRATAPGARH) is one of India's premier institutions for higher education, engineering, science, and technology. Located in Pratapgarh, Uttar Pradesh, the campus spans over 25 acres, offering a vibrant and intellectually stimulating environment for students, researchers, and faculty.</p>
+ 
+         <h3>Key Highlights</h3>
+         <ul>
+             <li><strong>World-Class Academics:</strong> Offers undergraduate, postgraduate, and doctoral programs across diverse disciplines.</li>
+             <li><strong>Research Excellence:</strong> Cutting-edge labs and partnerships drive innovation in AI, renewable energy, and more.</li>
+             <li><strong>Innovation and Entrepreneurship:</strong> Home to the Startup Incubation and Innovation Centre (SIIC).</li>
+             <li><strong>Campus Life:</strong> A vibrant community with world-class facilities for holistic development.</li>
+         </ul>
+     </section>
+ </div>
+ 
+ <script>
+     // Example JavaScript to display a welcome message in the console
+     document.addEventListener('DOMContentLoaded', () => {
+         console.log('Welcome to REC Pratapgarh! Explore the About section to know more.');
+     });
+ </script>
+ 
+ 
+ </body>
+ </html>
+ 
+     </section>
+ 
+    <!-- Academics Section 
+    <section id="academics" class="section">
+        <h2>Academics</h2>
+        <p>We offer undergraduate, postgraduate, and doctoral programs in various engineering disciplines.</p>
+    </section> -->
+ 
+    <!-- Research Section 
+    <section id="research" class="section">
+        <h2>Research</h2>
+        <p>Our cutting-edge research addresses global challenges in engineering and technology.</p>
+    </section>
+ 
+    <-- Faculty Section 
+    <section id="faculty" class="section">
+        <h2>Our Faculty</h2>
+        <p>Our distinguished faculty bring a wealth of knowledge and expertise to the classroom.</p>
+    </section> >
+ 
+   
+        <-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    <!-- Footer -->
+    <footer>
+           <section>
+            <h2>Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.548503576613!2d90.38649351537197!3d23.75088569458412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b895bd4d4b41%3A0x2a08842b4e3d54c4!2sRajkiya%20Engineering%20College!5e0!3m2!1sen!2sin!4v1695734634234!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        
+        <h2>Contact Us</h2>
+        <p>Email: contact@recpratapgarh.ac.in</p>
+        <p>Phone: +91-1234-567890</p>
+           </section>
+        <p>&copy; 2024 R.E.C Pratapgarh. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const images = [
+            "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/iit-varanasi.jpg",
+            "https://image.free-apply.com/gallery/l/uni/gallery/lg/1035601709/7c1eae946a8374e96bc211ef613876588784ad95.jpg?s=640/1200x600/FF0000",
+            "https://th.bing.com/th/id/OIP.Vc74fX7vfRBa9XvxMXOKTQHaE8?w=640&h=427&rs=1&pid=ImgDetMain",
+            "https://www.knowafest.com/files/uploads/Compi%20RP-2017103101.jpg"
+        ];
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            const carouselImage = document.getElementById('carousel-image');
+            carouselImage.src = images[index];
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        setInterval(nextImage, 2000); // Change image every 2 seconds
+    </script>
+ 
+
+ </body>
+ </html>
+ 
+</body>
+</html>

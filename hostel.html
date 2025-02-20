@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostels of REC Pratapgarh</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #004c99;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #004c99;
+            min-width: 200px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        nav .dropdown-content a {
+            color: #004c99;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        nav .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+        nav ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #004c99;
+            color: white;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .intro-images img {
+            width: 200px;
+            height: 150px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://via.placeholder.com/50" alt="Logo" class="logo">
+            <h1>REC Pratapgarh</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="recp_1.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Departments</a>
+                    <div class="dropdown-content">
+                        <a href="compter.html" onclick="showSection('btech-cse')">B.Tech in Computer Science Engineering</a>
+                        <a href="#btech-ee" onclick="showSection('btech-ee')">B.Tech in Electrical Engineering</a>
+                        <a href="#btech-me" onclick="showSection('btech-me')">B.Tech in Mechanical Engineering</a>
+                        <a href="#btech-ce" onclick="showSection('btech-ce')">B.Tech in Civil Engineering</a>
+                    </div>
+                </li>
+ 
+                <li><a href="#">Directorate</a></li>
+                <li class="dropdown">
+                    <a href="#">Deans</a>
+                    <div class="dropdown-content">
+                        <a href="#">Dean, Academic Affairs</a>
+                        <a href="#">Dean, Faculty Affairs</a>
+                    </div>
+                </li>
+                <li><a href="#">Placements</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="intro">
+            <h1>Hostels</h1>
+            <div class="intro-images">
+                <img src="https://th.bing.com/th/id/R.ee71e9eda208e824993200c6dd12357a?rik=TgiJIojJLEUz1w" alt="Hostel 1">
+                <img src="https://www.gpppratapgarh.in/images/1.jpg" alt="Hostel 2">
+            </div>
+            Rajkiya Engineering College provides “8” hostels for students, 2 hostels for girls and 5 hostels for boys.
+                Rest 1 hostel is under construction and will be available for student in near future. There are single seater rooms,
+                double seater rooms as well as triple seater rooms available for students. 
+               The entire campus is quite safe and secure. Entry to the campus is controlled by security staff at security gate itself
+        </section>
+
+        <section id="rules">
+            <h2>Rules of Hostel</h2>
+            <ul>
+               
+           
+                <li> Ragging is strictly prohibited as per the relevant directives of the Hon’ble Supreme Court, U.P. Government rules/orders and the directives of Uttar Pradesh Technical University Lucknow. Any Student found involved in ragging shall be suitably punished including FIR with the Police and expulsion from the Institute.
+                </li>
+                                <li> Every student shall maintain a high standard of discipline, have respect for the Institute and conduct himself in a dignified manner.</h4></li>
+                                <li> Student shall not do any such thing which may cause disturbance in studies or may be deemed vulgar in any way.
+                                   </li>
+                                <li> Guests are not allowed to stay in the hostel without prior permission of the warden. If this is not possible due to some unforeseen reasons, the arrival time of guest must be recorded in the visitor’s register placed in the hostel office and the Warden should be informed the next morning explaining reasons for the delay in obtaining permission.
+                                   </li>
+                                <li> Female guest is not allowed to stay in the Boys Hostel. Male Guests is not allowed to stay in the Girls Hostel.</h4></li>
+                                <li> Students are not allowed to interchange rooms/ hostels without written permission of Warden.
+                                   </li>
+                                <li> Students are not allowed to use Electric appliances such as heater, toaster, etc. without written permission.
+                                   </li>
+                                <li> Students shall check electrical fittings, furniture and other articles issued to them at the time of occupying the room. They have to pay for the damage/shortage, if any, at the end of the session.
+                                    </li>
+                                <li>Transfer of furniture from one room to another is not allowed.
+                                   </li>
+                                <li> Students are not allowed to hold any meeting without prior written permission of the warden.
+                                   </li>
+                                <li> Gambling and use of intoxicants are strictly prohibited.</h4></li>
+                                <li> Students are not permitted to keep any fire arm (even licensed).
+                                </li>
+                                <li> Students are not allowed to leave station without prior permission of warden.
+                                    </li>
+                                <li>Students are required to vacate their rooms while proceeding for summer vacation and also as and when required.
+                                    </li>
+                                <li>warden is authorized to open any locked room in case of an emergency.
+                                 </li>
+                                <li>   Students will not be absent from Hostel after 10.00 p.m. without priorPermission of the warden.
+                                  </li>
+                                <li>  The Warden/ Dean of Student Welfare can search any room at any time.
+                                    </li>
+                                <li>Students are not allowed to paste any objectionable poster or paintings on the walls of their rooms or in hostel premises.
+                                </li>
+                                <li>Formation of society / club is not permitted without written permission of the Dean of Student Welfare / Warden.
+                                   </li>
+                                <li> Students shall not take part in any subversive or in any kind of strike.</li>
+            </ul>
+        </section>
+
+        <section id="about">
+            <h2>Amenities at a Glance</h2>
+            <ul>
+            
+                <li>Furnished rooms including Curtains, Mattress, Fan and wordobe.</li>
+                <li>iningMess & Dining</li>
+                <li>Internet Facility (wi fi)</li>
+                <li>Solar Water Heaters</li>
+                <li>Gymnasium</li>
+                <li>TV Room</li>
+                <li>Library</li>
+                <li>Table Tennis, Carrom, Chess, Pool table
+                    Football, Volleyball, Basketball, Badminton.</li>
+                    <li>24 hour generator facility to beat power cuts.</li>
+                    <li>Hot water and cold water supply is available according to seasonal needs.</li>
+            </ul>
+        </section>
+        
+    </main> 
+    
+   
+    <footer>
+        
+        <p>&copy; REC Pratapgarh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

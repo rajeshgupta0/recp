@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajkiya Engineerig College Paratapgarh- Academic Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Academic Section Styles */
+        .academic-section {
+            background-color: white;
+            padding: 50px 20px;
+        }
+
+        .academic-section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .academic-programs {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .academic-program {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .academic-program:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .academic-program h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .academic-program p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Research Section Styles */
+        .research-section {
+            margin-top: 50px;
+        }
+
+        .research-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .research-area {
+            background-color: #e6f7ff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .research-area h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .academic-calendar {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .calendar-link {
+            font-size: 18px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .calendar-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rajkiya Engineerig College Paratapgarh - Academic Section</h1>
+    </header>
+
+    <!-- Academic Section -->
+    <section class="academic-section">
+        <h2>Our Academic Programs</h2>
+
+        <!-- Academic Programs -->
+        <div class="academic-programs">
+            <!-- Undergraduate Program with B.Tech Dropdown -->
+            <div class="academic-program dropdown">
+                <h3>Undergraduate Programs</h3>
+                <p>The undergraduate programs at Rajkiya Engineerig College Paratapgarh are designed to provide students with a strong foundation in technology and research.</p>
+                <div class="dropdown-content">
+                    <a href="#btech-cse">B.Tech in Computer Science Engineering</a>
+                    <a href="#btech-ee">B.Tech in Electrical Engineering</a>
+                    <a href="#btech-me">B.Tech in Mechanical Engineering</a>
+                    <a href="#btech-ce">B.Tech in Civil Engineering</a>
+                    <a href="#btech-ec">B.Tech in Electronics & Communication</a>
+                    <a href="#btech-ch">B.Tech in Chemical Engineering</a>
+                    <a href="#btech-bi">B.Tech in Biomedical Engineering</a>
+                    <a href="#btech-ai">B.Tech in Artificial Intelligence</a>
+                    <a href="#btech-it">B.Tech in Information Technology</a>
+                </div>
+            </div>
+
+            <!-- Postgraduate Program -->
+            <div class="academic-program">
+                <h3>Postgraduate Programs</h3>
+                <p>R.E.C Pratapgarh offers a variety of master's and doctoral programs across multiple disciplines for advanced learning and research.</p>
+                <a href="#postgraduate" class="calendar-link">Learn More</a>
+            </div>
+
+            <!-- PhD Program -->
+            <div class="academic-program">
+                <h3>PhD Programs</h3>
+                <p>The PhD programs at Rajkiya Engineerig College Paratapgarhfocus on producing world-class researchers and innovators who contribute to cutting-edge knowledge.</p>
+                <a href="#phd" class="calendar-link">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Research Section -->
+        <div class="research-section">
+            <h2>Research Areas</h2>
+            <div class="research-areas">
+                <!-- Research Area 1 -->
+                <div class="research-area">
+                    <h4>Artificial Intelligence</h4>
+                    <p>Research in AI focuses on machine learning, robotics, and neural networks.</p>
+                </div>
+                
+                <!-- Research Area 2 -->
+                <div class="research-area">
+                    <h4>Quantum Computing</h4>
+                    <p>Exploring new quantum algorithms and computing systems for the future.</p>
+                </div>
+
+                <!-- Research Area 3 -->
+                <div class="research-area">
+                    <h4>Material Science</h4>
+                    <p>Innovating new materials with applications in electronics, energy, and more.</p>
+                </div>
+
+                <!-- Research Area 4 -->
+                <div class="research-area">
+                    <h4>Robotics</h4>
+                    <p>Design and development of robots for industrial, healthcare, and academic use.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Calendar -->
+        <div class="academic-calendar">
+            <h2>Academic Calendar</h2>
+            <p>Stay updated with the latest academic calendar of Rajkiya Engineerig College Paratapgarh.</p>
+            <a href="calendar.html" class="calendar-link">Download Full Academic Calendar</a>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
